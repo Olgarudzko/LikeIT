@@ -10,22 +10,21 @@
 <body>
 <c:if test="${requestScope.user != null}">
 <c:set var="person" scope="request" value="${requestScope.user}"/>
-<c:if test="${person.role == 0}">
-<h2>No such user</h2>
-</c:if>
-<c:if test="${person.role != 0}">
 <table border='1'>
 <tr>
 <td><c:out value="Login"/></td>
-<td><c:out value="Role"/></td>
+<td><c:out value="Password"/></td>
 <td><c:out value="Rating"/></td>
 </tr>
 <tr>
 <td><c:out value="${person.login}"/></td>
-<td><c:out value="${person.roleValue}"/></td>
+<td><c:out value="${person.password}"/></td>
 <td><c:out value="${person.rating}"/></td>
 </tr>
 </table>
+</c:if>
+<c:if test="${requestScope.user == null}">
+<h2>No such user</h2>
 </c:if>
 </body>
 </html>
