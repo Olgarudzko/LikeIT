@@ -1,6 +1,6 @@
 package by.rudzko.likeit.service.validation;
 
-public class Validator {
+public class Validator {// имя более конкретное
 
     private static final String WRONG_LOGIN = "Wrong login format.";
     private static final String WRONG_PASSWORD = "Wrong password format.";
