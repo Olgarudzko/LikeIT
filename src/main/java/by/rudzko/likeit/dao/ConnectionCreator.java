@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-public class ConnectionCreator {
+public class ConnectionCreator {// этот пакет не лучшее место для размещения данного класса
     private static final String COM_MYSQL_JDBC_DRIVER = "com.mysql.jdbc.Driver";
     private static final String URL_DB = "jdbc:mysql://localhost:3306/likeitdb";
     private static final String USER_DB = "root";
