@@ -16,7 +16,8 @@ public class UserServiceImpl implements UserService {
 
     public User findUser(User user) throws ServiceException {
         try {
-            Validator.isInputValid(user.getLogin(), user.getPassword());
+            Validator.isInputValid(user.getLogin(), user.getPassword());// знаешь, is в метод предполагает использовае if-a
+            // а то не очень читаемый код получается
             return userDAO.findUser(user);
         } catch (DAOException | InputValidationException e) {
             throw new ServiceException(e);
