@@ -8,7 +8,9 @@ import java.net.URL;
 import java.text.DateFormat;
 import java.util.Date;
 
-public class Logger {
+public class Logger {// свои классы логгеры не пишутся
+    // вспомогательный метод - пожалуйста
+    // а логгеры бери стандартные из log4j
     private static final String LINE = ", line ";
     private static final String METHOD = " in method ";
     private static final String ERROR_OCCURED = "Error occured to ";
