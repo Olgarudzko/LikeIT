@@ -12,7 +12,7 @@ import java.util.List;
 
 import static by.rudzko.likeit.controller.command.Constant.USERS;
 
-public class ShowUsersCommand implements Command {
+public class ShowUsersCommand implements Command {// не используй слово show, твой класс ведь ничего не покаызвае на самом деле, а только предоставляет информацию
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         List<User> users = null;
         ServiceFactory factory = ServiceFactory.getInstance();

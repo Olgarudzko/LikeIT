@@ -1,6 +1,6 @@
 package by.rudzko.likeit.dao;
 
-public class Constant {
+public class Constant {// это общемировые константы, что класс так называешь?
     public static final String FIND_USER_REQUEST = "SELECT * FROM Profiles WHERE Login='%s' and Password='%s';";
     public static final String ADD_USER_REQUEST = "INSERT INTO Profiles (Login, Password, FK_Role) values('%s', '%s', '%d');";
     public static final String SHOW_USERS_REQUEST = "SELECT * FROM Profiles;";
