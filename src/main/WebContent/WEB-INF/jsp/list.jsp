@@ -18,7 +18,7 @@
 <c:forEach items="${requestScope.users}" var="user">
   <tr>
   <td><c:out value="${user.login}"/></td>
-  <td><c:out value="${user.roleValue}"/></td>
+  <td><c:out value="${user.role}"/></td>
   <td><c:out value="${user.rating}"/></td>
   </tr>
 </c:forEach>

@@ -1,10 +1,10 @@
 package by.rudzko.likeit.service.validation;
 
-public class InputValidationException extends Exception {
+public class InputValidationException extends Exception{
 
-    private static final long serialVersionUID = 4279664404705532141L;
+	private static final long serialVersionUID = 4279664404705532141L;
 
-    public InputValidationException() {
+	public InputValidationException() {
         super();
     }
 

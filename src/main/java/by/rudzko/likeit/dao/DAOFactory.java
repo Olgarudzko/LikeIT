@@ -1,5 +1,6 @@
 package by.rudzko.likeit.dao;
 
+import by.rudzko.likeit.dao.UserDAO;
 import by.rudzko.likeit.dao.implementation.UserDAOimpl;
 
 public final class DAOFactory {

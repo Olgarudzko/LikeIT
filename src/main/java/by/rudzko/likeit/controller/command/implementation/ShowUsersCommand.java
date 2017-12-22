@@ -5,22 +5,25 @@ import by.rudzko.likeit.controller.command.Command;
 import by.rudzko.likeit.domain.User;
 import by.rudzko.likeit.service.ServiceFactory;
 import by.rudzko.likeit.service.exception.ServiceException;
+import by.rudzko.likeit.service.validation.InputValidationException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-import static by.rudzko.likeit.controller.command.Constant.USERS;
+import static by.rudzko.likeit.controller.command.SessionConstant.USERS;
 
 public class ShowUsersCommand implements Command {// не используй слово show, твой класс ведь ничего не покаызвае на самом деле, а только предоставляет информацию
     public void execute(HttpServletRequest request, HttpServletResponse response) {
-        List<User> users = null;
+        List <User> users = null;
         ServiceFactory factory = ServiceFactory.getInstance();
         try {
-            users = factory.getUserService().showUsers();
+            users=factory.getUserService().showUsers();
         } catch (ServiceException e) {
             Logger.getLogger().printError(getClass(), e);
-        }
+        }catch (InputValidationException e) {
+        	Logger.getLogger().printError(getClass(), e);
+		}
         request.setAttribute(USERS, users);
     }
 }

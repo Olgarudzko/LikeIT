@@ -11,33 +11,33 @@ import by.rudzko.likeit.service.validation.Validator;
 
 import java.util.List;
 
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService{
     private UserDAO userDAO = DAOFactory.getInstance().getUserDAO();
 
-    public User findUser(User user) throws ServiceException {
+    public User findUser(User user) throws InputValidationException, ServiceException {
         try {
             Validator.isInputValid(user.getLogin(), user.getPassword());// знаешь, is в метод предполагает использовае if-a
             // а то не очень читаемый код получается
             return userDAO.findUser(user);
-        } catch (DAOException | InputValidationException e) {
-            throw new ServiceException(e);
+        } catch (DAOException e) {
+            throw new ServiceException("Search wasn't completed", e);
         }
     }
 
-    public User addUser(User user) throws ServiceException {
+    public User addUser(User user) throws InputValidationException, ServiceException {
         try {
             Validator.isInputValid(user.getLogin(), user.getPassword());
             return userDAO.addUser(user);
-        } catch (DAOException | InputValidationException e) {
-            throw new ServiceException(e);
+        } catch (DAOException e) {
+            throw new ServiceException("User wasn't added", e);
         }
     }
 
-    public List<User> showUsers() throws ServiceException {
+    public List<User> showUsers() throws InputValidationException, ServiceException {
         try {
             return userDAO.showUsers();
         } catch (DAOException e) {
-            throw new ServiceException(e);
+            throw new ServiceException("", e);
         }
     }
 

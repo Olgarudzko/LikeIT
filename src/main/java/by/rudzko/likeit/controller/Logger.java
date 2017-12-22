@@ -12,9 +12,9 @@ public class Logger {// свои классы логгеры не пишутся
     // вспомогательный метод - пожалуйста
     // а логгеры бери стандартные из log4j
     private static final String LINE = ", line ";
-    private static final String METHOD = " in method ";
-    private static final String ERROR_OCCURED = "Error occured to ";
-    private static final String LOG_TXT = "log.txt";
+	private static final String METHOD = " in method ";
+	private static final String ERROR_OCCURED = "Error occured to ";
+	private static final String LOG_TXT = "log.txt";
     private static Logger instance;
 
 
@@ -40,15 +40,15 @@ public class Logger {// свои классы логгеры не пишутся
             try {
                 printer = new PrintWriter(new FileWriter(file, true));
                 printer.println(time);
-                StackTraceElement[] trace = exception.getStackTrace();
-                for (StackTraceElement element : trace) {
-                    printer.println(ERROR_OCCURED.concat(element.getClassName())
-                            .concat(METHOD).concat(element.getMethodName())
-                            .concat(LINE).concat(String.valueOf(element.getLineNumber())));
+                StackTraceElement [] trace = exception.getStackTrace();
+                for(StackTraceElement element: trace) {
+                printer.println(ERROR_OCCURED.concat(element.getClassName())
+                		.concat(METHOD).concat(element.getMethodName())
+                		.concat(LINE).concat(String.valueOf(element.getLineNumber())));
                 }
                 printer.flush();
             } catch (IOException e) {
-            } finally {
+            }finally{
                 if (printer != null)
                     printer.close();
             }

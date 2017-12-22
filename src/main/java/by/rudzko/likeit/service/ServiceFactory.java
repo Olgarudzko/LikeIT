@@ -1,5 +1,6 @@
 package by.rudzko.likeit.service;
 
+import by.rudzko.likeit.service.UserService;
 import by.rudzko.likeit.service.implementation.UserServiceImpl;
 
 public final class ServiceFactory {
@@ -18,5 +19,5 @@ public final class ServiceFactory {
     public static ServiceFactory getInstance() {
         return instance;
     }
-
+    
 }
